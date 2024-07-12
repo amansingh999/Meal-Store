@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getMeals } from '../services/apiCalls';
-import './Menu.css';
+import './styles/Menu.css';
 
 const Menu = () => {
   const [categories, setCategories] = useState([]);

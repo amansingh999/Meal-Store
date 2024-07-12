@@ -9,7 +9,8 @@ import Favourites from './components/Favourites';
 import MealGenerator from './components/MealGenerator';
 import './App.css';
 import './Responsive.css';
-import './components/Navbar.css';
+import './components/styles/Navbar.css';
+import Footer from './components/Footer';
 
 const App = () => {
   const [favourites, setFavourites] = useState([]);
