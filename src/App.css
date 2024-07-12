@@ -202,3 +202,7 @@ ul li button .fa-heart {
   text-align: center;
   margin-top: 20px;
 }
+
+.fav-button {
+  margin-right: 10px;
+}

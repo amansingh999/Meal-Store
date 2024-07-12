@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getMeals } from '../services/apiCalls';
+import './Menu.css';
 
 const Menu = () => {
   const [categories, setCategories] = useState([]);
@@ -15,17 +16,13 @@ const Menu = () => {
   }
 
   return (
-    <div className="container">
-      <h1>Menu</h1>
-      <ul>
-        {categories.map(category => (
-          <li key={category.idCategory}>
-            <img src={category.strCategoryThumb} alt={category.strCategoryThumb} />
-            {/* <p>{category.strCategoryDescription}</p> */}
-            <button><Link to={`/menu/${category.strCategory}`} className='menu_button'>{category.strCategory}</Link></button>
-          </li>
-        ))}
-      </ul>
+    <div className="menu-container">
+      {categories.map((category) => (
+        <div className="menu-item" key={category.idCategory}>
+          <img src={category.strCategoryThumb} alt={category.strCategory} />
+          <button><Link to={`/menu/${category.strCategory}`} className='menu_button'>{category.strCategory}</Link></button>
+        </div>
+      ))}
     </div>
   );
 }

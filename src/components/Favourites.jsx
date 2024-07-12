@@ -1,4 +1,5 @@
 import React from 'react';
+import './Menu.css';
 
 const Favourites = ({ favourites, removeFromFavorites }) => {
   return (
@@ -9,17 +10,17 @@ const Favourites = ({ favourites, removeFromFavorites }) => {
           You have no favourite meals yet. Start adding some delicious meals!
         </p>
       ) : (
-        <ul>
+        <div className="menu-container">
           {favourites.map((meal) => (
-            <li key={meal.idMeal}>
+            <div className="menu-item" key={meal.idMeal}>
               <img src={meal.strMealThumb} alt={meal.strMeal} />
               <h2>{meal.strMeal}</h2>
               <button onClick={() => removeFromFavorites(meal.idMeal)}>
                 Remove from Favourites
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
